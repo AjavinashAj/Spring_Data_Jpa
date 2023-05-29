@@ -1,0 +1,51 @@
+package in.ashokit.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="STUDENT_TBL")
+public class School {
+	@Id
+	@Column(name="sid")
+	private Integer id;
+	
+	@Column(name="sname")
+	private String name;
+	
+	@Column(name="saddr")
+	private String addr;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddr() {
+		return addr;
+	}
+
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+
+	@Override
+	public String toString() {
+		return "School [id=" + id + ", name=" + name + ", addr=" + addr + "]";
+	}
+	
+	
+}

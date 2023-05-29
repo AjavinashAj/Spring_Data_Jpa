@@ -1,0 +1,74 @@
+package in.ashokit;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+
+import in.ashokit.entity.School;
+import in.ashokit.repository.SchoolRepository;
+import jakarta.transaction.Transactional;
+
+@SpringBootApplication
+public class SchoolApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context=SpringApplication.run(SchoolApplication.class, args);
+		SchoolRepository schoolRepo=context.getBean(SchoolRepository.class);
+		School s= new School();
+		schoolRepo.save(s);
+//		s.setName("bdps");
+//		s.setAddr("hajipur");
+//		s.setId(12);
+//		schoolRepo.save(s);
+//		School s1=new School();
+//		s1.setId(15);
+//		s1.setName("st.paul");
+//		s1.setAddr("patna");
+//		School s2=new School();
+//		s2.setId(16);
+//		s2.setName("st.paul");
+//		s2.setAddr("hajipur");
+//		School s3=new School();
+//		s3.setId(17);
+//		s3.setName("st.xavier");
+//		s3.setAddr("patna");
+//		List<School>li=Arrays.asList(s1,s2,s3);
+//		schoolRepo.saveAll(li);
+//		//System.out.println(schoolRepo.findById(12));
+//		//System.out.println(schoolRepo.findAll());
+//		System.out.println(schoolRepo.existsById(12));
+//		System.out.println(schoolRepo.count());
+//		schoolRepo.deleteById(12);
+//		System.out.println(schoolRepo.count());
+//		System.out.println(schoolRepo.findAll());
+//		System.out.println(schoolRepo.findAll());
+//		//pagination and sorting
+//		List <School> sc=schoolRepo.findAll(Sort.by("name"));
+//		sc.forEach(x->System.out.println(x));
+//		
+//		List<School> sco=schoolRepo.findAll(Sort.by("id"));
+//		sco.forEach(x->System.out.println(x));
+//		List<School> sco1=schoolRepo.findAll(Sort.by("addr"));
+//		sco1.forEach(x->System.out.println(x));
+//		
+//		//QueryByExample
+//		
+//		School sc1=new School();
+//		   sc1.setAddr("USA");
+//		   sc1.setId(100);
+//		   sc1.setName("Alex");
+//		   Example<School> example=Example.of(sc1);
+//		   List<School> sch=schoolRepo.findAll(example);
+//		   sch.forEach(x->System.out.println(x));
+//		   
+//		  
+	}
+
+}

@@ -1,0 +1,20 @@
+package in.ashokit.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+
+import in.ashokit.entity.School;
+import jakarta.transaction.Transactional;
+
+public interface SchoolRepository extends JpaRepository<School,Integer>{
+	
+//	// for non-select query
+//	   @Query("delete from school where id=sid")
+//	   @Modifying
+//	   @Transactional
+//	   public void deleteSCh(Integer sid);
+
+	  
+	   
+}

@@ -1,0 +1,23 @@
+package in.ashokit;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import in.ashokit.entity.School;
+import in.ashokit.repository.SchoolRepository;
+
+@SpringBootApplication
+public class SchoolApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context=SpringApplication.run(SchoolApplication.class, args);
+		SchoolRepository sr=context.getBean(SchoolRepository.class);
+		School s= new School();
+		s.setSid(12);
+		s.setSname("Alex");
+		s.setSaddr("delhi-45");
+		sr.save(s);
+	}
+
+}

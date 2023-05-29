@@ -1,0 +1,42 @@
+package in.ashokit;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import in.ashokit.entity.School;
+import in.ashokit.repository.SchoolRepository;
+
+@SpringBootApplication
+public class SchoolApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context=SpringApplication.run(SchoolApplication.class, args);
+		SchoolRepository schoolRepo=context.getBean(SchoolRepository.class);
+		School s= new School();
+		s.setName("bdps");
+		s.setAddr("hajipur");
+		s.setId(12);
+		schoolRepo.save(s);
+		School s1=new School();
+		s1.setId(15);
+		s1.setName("st.paul");
+		s1.setAddr("patna");
+		School s2=new School();
+		s2.setId(16);
+		s2.setName("st.paul");
+		s2.setAddr("hajipur");
+		School s3=new School();
+		s3.setId(17);
+		s3.setName("st.xavier");
+		s3.setAddr("patna");
+		List<School>li=Arrays.asList(s1,s2,s3);
+		schoolRepo.saveAll(li);
+		
+		
+	}
+
+}
